@@ -70,24 +70,24 @@ body {
   opacity: 0;
   font-family: opening-theme-font;
   color: #ffbe00;
-  font-size: 2rem;
+  font-size: 4rem;
   line-height: 10px;
 }
 
 @keyframes companies {
   0% {
-    width: 18em;
-    transform: scale(2.75);
+    width: 50em;
+    transform: scale(1.75);
     opacity: 1;
   }
   50% {
     opacity: 1;
-    width: 18em;
+    width: 50em;
   }
   100% {
     opacity: 0;
     transform: scale(0.1);
-    width: 18em;
+    width: 50em;
   }
 }
 

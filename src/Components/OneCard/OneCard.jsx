@@ -9,8 +9,8 @@ function OneCard({ name, model, hyperdrive_rating }) {
 
       <div className="card-information">
         <h2>{name}</h2>
-        <h3>{model}</h3>
-        <h3>{hyperdrive_rating}</h3>
+        <h3>Model: {model}</h3>
+        <h3>Hyperdrive Rating: {hyperdrive_rating}</h3>
       </div>
     </div>
   );
