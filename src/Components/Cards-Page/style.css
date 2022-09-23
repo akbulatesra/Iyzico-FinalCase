@@ -9,6 +9,8 @@
   grid-template-columns: 30em 30em;
   border-radius: 0 0 2rem 2rem;
   font-family: regular-font;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-container {

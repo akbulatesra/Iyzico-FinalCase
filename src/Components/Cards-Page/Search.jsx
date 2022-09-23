@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
-function Search() {
-  const [filterText, setFilterText] = useState("");
+function Search({ searchQuery, setSearchQuery }) {
   const filterFunction = (e) => {
-    setFilterText(e.target.value);
+    setSearchQuery(e.target.value);
   };
   return (
     <form className="search-form">
@@ -13,7 +12,7 @@ function Search() {
         name="search"
         id="search"
         placeholder="name or model"
-        value={filterText}
+        value={searchQuery}
         onChange={filterFunction}
       />
     </form>

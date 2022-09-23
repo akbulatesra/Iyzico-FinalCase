@@ -17,6 +17,7 @@ body {
   height: 100%;
   margin: 0;
   background-color: black;
+  overflow-y: scroll;
 }
 
 .container {
@@ -25,6 +26,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
 }
 
 .stars {

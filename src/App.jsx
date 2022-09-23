@@ -4,30 +4,33 @@ import OpeningPage from "./Components/Opening-Page/OpeningPage";
 import EnterPage from "./Components/Enter-Page/EnterPage";
 import "./Stars";
 import Cards from "./Components/Cards-Page/Cards";
-import InformationText from "./Components/Opening-Page/InformationText";
-import CardDetail from "./Components/Card-Detail-Page/CardDetail";
 
 function App() {
   const [showOpeningPage, setShowOpeningPage] = useState(false);
   const [showEnterPage, setShowEnterPage] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
-      setShowOpeningPage(false);
-    }, 22000);
-  }, []);
+    if (showOpeningPage) {
+      setTimeout(() => {
+        setShowOpeningPage(false);
+      }, 22000);
+    }
+  }, [showOpeningPage]);
+
   const handlePageOpening = () => {
     setShowEnterPage(false);
     setShowOpeningPage(true);
   };
+
   return (
-    <>
+    <div class="main-container">
+      {/* <Stars createStar={createStar} /> */}
       {showEnterPage && <EnterPage handlePageOpening={handlePageOpening} />}
       {showOpeningPage && !showEnterPage && (
         <OpeningPage openingPage={showOpeningPage} />
       )}
       {!showOpeningPage && !showEnterPage && <Cards />}
-    </>
+    </div>
   );
 }
 

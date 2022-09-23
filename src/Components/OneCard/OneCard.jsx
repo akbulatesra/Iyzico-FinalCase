@@ -1,16 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function OneCard({
-  name,
-  model,
-  hyperdrive_rating,
-  passengers,
-  max_atmosphering_speed,
-  manufacturer,
-  crew,
-  cargo_capacity,
-}) {
+function OneCard({ name, model, hyperdrive_rating }) {
   const src = `src/images/${name}.jpg`;
   return (
     <div>
