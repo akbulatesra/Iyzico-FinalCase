@@ -3,18 +3,18 @@
   text-align: center;
   font-family: welcome-theme-font;
   letter-spacing: 5px;
-  font-size: x-large;
+  font-size: 3vw;
+  padding: 0 2rem 0 2rem;
 }
 
 .button-door {
   color: #ffbe00;
-
   background: none;
   border: none;
 }
 
 .icon-door {
   fill: #ffbe00;
-  width: 3rem;
-  height: 3rem;
+  width: 5vw;
+  height: 5vh;
 }

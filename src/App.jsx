@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import OpeningPage from "./Components/Opening-Page/OpeningPage";
 import EnterPage from "./Components/Enter-Page/EnterPage";
-import "./Stars";
+// import "./Stars";
 import Cards from "./Components/Cards-Page/Cards";
 
 function App() {
