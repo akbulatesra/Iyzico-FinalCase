@@ -1,0 +1,45 @@
+@font-face {
+  font-family: regular-font;
+  src: url(./src/assets/star-wars-fonts/AnakinmonoRegular.ttf);
+}
+.card-detail-container {
+  color: white;
+  width: 40vmax;
+  font-family: regular-font;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: 3rem auto 0 auto;
+  text-transform: uppercase;
+  border-radius: 2rem 2rem 2rem 2rem;
+  border: 1px solid #ffbe00;
+}
+
+.card-detail-image {
+  width: 40vmax;
+  height: 20vmax;
+  border-radius: 2rem 2rem 0 0;
+  z-index: 2;
+  background-color: #ffbe00;
+}
+
+span {
+  color: black;
+}
+
+.card-detail-information {
+  width: 40vmax;
+  background-color: #ffbe00;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.card-detail-information > h2 {
+  font-size: 2vw;
+  margin: 0.5rem;
+}
+
+.card-detail-information > h4 {
+  margin: 0.5rem;
+  font-size: 1.5vw;
+}

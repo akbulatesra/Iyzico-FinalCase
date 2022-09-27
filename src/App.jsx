@@ -5,12 +5,7 @@ import EnterPage from "./Components/Enter-Page/EnterPage";
 import "./Stars";
 import Cards from "./Components/Cards-Page/Cards";
 import Error from "./Components/Error-Page/Error";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CardDetail from "./Components/Card-Detail-Page/CardDetail";
 
 function App() {
@@ -41,11 +36,6 @@ function App() {
   );
 
   function Main() {
-    // const { pathname } = useLocation();
-    // if (pathname !== "/") {
-    //   return <Cards />;
-    // }
-
     return (
       <div className="main-container">
         {showEnterPage && <EnterPage handlePageOpening={handlePageOpening} />}

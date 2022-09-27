@@ -53,15 +53,15 @@ function Cards() {
     }
   };
   const filteredData = searchQuery.length
-    ? datas.filter((data) => data.name.toLowerCase().includes(searchQuery))
+    ? datas.filter(
+        (data) =>
+          data.name.toLowerCase().includes(searchQuery) ||
+          data.model.toLowerCase().includes(searchQuery)
+      )
     : datas;
 
   if (loading) {
-    return (
-      <div>
-        <Loading />
-      </div>
-    );
+    return <Loading />;
   } else {
     return (
       <Routes>

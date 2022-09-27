@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function OneCard({ name, model, hyperdrive_rating, url }) {
   const src = `src/images/${name}.jpg`;
@@ -14,7 +14,16 @@ function OneCard({ name, model, hyperdrive_rating, url }) {
         <h2>{name}</h2>
         <h3>Model: {model}</h3>
         <h3>Hyperdrive Rating: {hyperdrive_rating}</h3>
-        <Link to={`/${shipId}`}>More Deatils</Link>
+        <NavLink
+          style={{
+            color: "black",
+            textDecoration: "none",
+            fontSize: "1.5vw",
+          }}
+          to={`/${shipId}`}
+        >
+          More Details
+        </NavLink>
       </div>
     </div>
   );

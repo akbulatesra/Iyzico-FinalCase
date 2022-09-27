@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Route, Routes, Link, useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import axios from "axios";
 import Error from "../Error-Page/Error";
 import Loading from "../Loading-Page/Loading";
+import "./style.css";
 
 function CardDetail({
   name,
@@ -55,19 +56,42 @@ function CardDetail({
   if (shipIdFromUrl !== shipId) return null;
 
   return (
-    <div>
-      <img className="card-image" src={src} alt={name} />
+    <div className="main-container">
+      <div className="card-detail-container">
+        <img className="card-detail-image" src={src} alt={name} />
 
-      <div className="card-information">
-        <h2>{name || data.name}</h2>
-        <h3>{model || data.model}</h3>
-        <h3>{hyperdrive_rating || data.hyperdrive_rating}</h3>
-        <h4>{passengers || data.passengers}</h4>
-        <h4>{max_atmosphering_speed || data.max_atmosphering_speed}</h4>
-        <h4>{manufacturer || data.manufacturer}</h4>
-        <h4>{crew || data.crew}</h4>
-        <h4>{cargo_capacity || data.cargo_capacity}</h4>
-        <Link to="/">Return Starships List</Link>
+        <div className="card-detail-information">
+          <h2>{name || data.name}</h2>
+          <h4>
+            <span>Model: </span>
+            {model || data.model}
+          </h4>
+          <h4>
+            <span>Hyperdrive Rating: </span>
+            {hyperdrive_rating || data.hyperdrive_rating}
+          </h4>
+          <h4>
+            <span>Passengers: </span>
+            {passengers || data.passengers}
+          </h4>
+          <h4>
+            <span>Max Atmosphering Speed: </span>{" "}
+            {max_atmosphering_speed || data.max_atmosphering_speed}
+          </h4>
+          <h4>
+            <span>Manufacturer: </span>
+            {manufacturer || data.manufacturer}
+          </h4>
+          <h4>
+            <span>Crew: </span>
+            {crew || data.crew}
+          </h4>
+          <h4>
+            <span>Cargo Capacity: </span>
+            {cargo_capacity || data.cargo_capacity}
+          </h4>
+        </div>
+        <NavLink to="/">Return Starships List</NavLink>
       </div>
     </div>
   );
