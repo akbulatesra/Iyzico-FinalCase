@@ -4,6 +4,8 @@ import "./style.css";
 import OneCard from "../OneCard/OneCard";
 import Search from "./Search";
 import Loading from "../Loading-Page/Loading.jsx";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import CardDetail from "../Card-Detail-Page/CardDetail";
 
 function Cards() {
   const [urls, setUrls] = useState(["https://swapi.dev/api/starships/"]);
@@ -61,28 +63,44 @@ function Cards() {
       </div>
     );
   } else {
-    console.log(loading);
     return (
-      <div className="cards-container">
-        <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-        {filteredData.map((data, index) => {
-          return (
-            <div
-              className={`card-container card-container-${index}`}
-              key={index}
-            >
-              <OneCard {...data} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="cards-container">
+              <Search
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+              />
+              {filteredData.map((data, index) => {
+                return (
+                  <div
+                    className={`card-container card-container-${index}`}
+                    key={index}
+                  >
+                    <OneCard {...data} />
+                  </div>
+                );
+              })}
+              <button
+                className="load-more-button"
+                disabled={isDisabledLoadMoreButton}
+                onClick={nextPage}
+              >
+                load more
+              </button>
             </div>
-          );
-        })}
-        <button
-          className="load-more-button"
-          disabled={isDisabledLoadMoreButton}
-          onClick={nextPage}
-        >
-          load more
-        </button>
-      </div>
+          }
+        />
+        <Route
+          path="/:shipId"
+          element={datas.map((data) => {
+            return <CardDetail {...data} />;
+          })}
+        />
+        <Route path="*" element={<div>404 not found</div>}></Route>
+      </Routes>
     );
   }
 }

@@ -70,7 +70,7 @@
   background-color: transparent;
   color: white;
   border: 1px solid #ffbe00;
-  flex: 1 1 100%;
+  width: 90vw;
 }
 
 .load-more-button:disabled {
