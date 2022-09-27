@@ -94,12 +94,11 @@ function Cards() {
           }
         />
         <Route
-          path="/:shipId"
-          element={datas.map((data) => {
-            return <CardDetail {...data} />;
+          path=":shipId"
+          element={datas.map((data, index) => {
+            return <CardDetail key={index} {...data} />;
           })}
         />
-        <Route path="*" element={<div>404 not found</div>}></Route>
       </Routes>
     );
   }

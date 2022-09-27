@@ -4,7 +4,14 @@ import OpeningPage from "./Components/Opening-Page/OpeningPage";
 import EnterPage from "./Components/Enter-Page/EnterPage";
 import "./Stars";
 import Cards from "./Components/Cards-Page/Cards";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Error from "./Components/Error-Page/Error";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
+import CardDetail from "./Components/Card-Detail-Page/CardDetail";
 
 function App() {
   const [showOpeningPage, setShowOpeningPage] = useState(false);
@@ -26,24 +33,29 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <div class="main-container">
-              {showEnterPage && (
-                <EnterPage handlePageOpening={handlePageOpening} />
-              )}
-              {showOpeningPage && !showEnterPage && (
-                <OpeningPage openingPage={showOpeningPage} />
-              )}
-              {!showOpeningPage && !showEnterPage && <Cards />}
-            </div>
-          }
-        ></Route>
-        <Route path="*" element={<div>404 not found</div>}></Route>
+        <Route path="/" element={<Main />} />
+        <Route path=":shipId" element={<CardDetail />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </Router>
   );
+
+  function Main() {
+    // const { pathname } = useLocation();
+    // if (pathname !== "/") {
+    //   return <Cards />;
+    // }
+
+    return (
+      <div className="main-container">
+        {showEnterPage && <EnterPage handlePageOpening={handlePageOpening} />}
+        {showOpeningPage && !showEnterPage && (
+          <OpeningPage openingPage={showOpeningPage} />
+        )}
+        {!showOpeningPage && !showEnterPage && <Cards />}
+      </div>
+    );
+  }
 }
 
 export default App;
