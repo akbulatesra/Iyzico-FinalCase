@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import OpeningPage from "./Components/Opening-Page/OpeningPage";
 import EnterPage from "./Components/Enter-Page/EnterPage";
-import "./Stars";
+import createStar from "./Stars";
 import Cards from "./Components/Cards-Page/Cards";
 import Error from "./Components/Error-Page/Error";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -11,6 +11,17 @@ import CardDetail from "./Components/Card-Detail-Page/CardDetail";
 function App() {
   const [showOpeningPage, setShowOpeningPage] = useState(false);
   const [showEnterPage, setShowEnterPage] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      createStar();
+    });
+    return () => {
+      window.removeEventListener("resize", () => {
+        screenSize.current = window.innerWidth;
+      });
+    };
+  }, []);
 
   useEffect(() => {
     if (showOpeningPage) {

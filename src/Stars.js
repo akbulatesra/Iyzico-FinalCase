@@ -11,14 +11,24 @@ function getRandomPosition() {
 }
 
 const createStar = () => {
+  let starBody;
+  if (document.getElementById("starBody") === null) {
+    starBody = document.createElement("div");
+    starBody.id = "starBody";
+  } else {
+    starBody = document.getElementById("starBody");
+    starBody.innerHTML = "";
+  }
+
   for (let i = 0; i < numStars; i++) {
     let star = document.createElement("div");
     star.className = "star";
     var xy = getRandomPosition();
     star.style.top = xy[0] + "px";
     star.style.left = xy[1] + "px";
-    document.body.append(star);
+    starBody.append(star);
   }
+  document.body.append(starBody);
 };
-
 createStar();
+export default createStar;
