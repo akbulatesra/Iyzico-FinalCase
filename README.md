@@ -1,16 +1,17 @@
 # Iyzico FinalCase Project
 
+## This website is built using [Vite](https://vitejs.dev/) + [React](https://reactjs.org/).
+
 ## With this website you can
 
-### List starships,
+- List starships,
 
-### Search among starships,
+- Search among starships,
 
-### Read details of a specific starship,
+- Read details of a specific starship,
 
-### Load more starships with a load more button.
+- Load more starships with a load more button.
 
-## This website is built using [Vite](https://vitejs.dev/) + [React](https://reactjs.org/).
 
 ## Used Technologies
 
