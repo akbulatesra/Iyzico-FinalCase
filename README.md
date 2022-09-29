@@ -31,3 +31,5 @@ npm install
 ```
 npm run dev
 ```
+
+![Preview](/src/assets/iyzico-finalcase-preview.gif)
