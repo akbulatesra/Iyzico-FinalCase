@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import useSound from "use-sound";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDoorClosed } from "@fortawesome/free-solid-svg-icons";

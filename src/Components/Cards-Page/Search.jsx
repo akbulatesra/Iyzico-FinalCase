@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Search({ searchQuery, setSearchQuery }) {
   const filterFunction = (e) => {
