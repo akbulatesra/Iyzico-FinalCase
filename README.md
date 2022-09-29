@@ -1,16 +1,25 @@
 # Iyzico FinalCase Project
 
-### With this website you can see starships. Also you can filter starships with their name or model.
+## With this website you can
+
+### List starships,
+
+### Search among starships,
+
+### Read details of a specific starship,
+
+### Load more starships with a load more button.
 
 ## This website is built using [Vite](https://vitejs.dev/) + [React](https://reactjs.org/).
 
-## Project Details
- - React
- - Swapi API
- - Axios
- - Font Awesome
- - Use sound
- 
+## Used Technologies
+
+- React
+- Swapi API
+- Axios
+- Font Awesome
+- Use sound
+
 ### Install dependencies
 
 ```
@@ -21,10 +30,4 @@ npm install
 
 ```
 npm run dev
-```
-
-### To build for production
-
-```
-npm build
 ```
