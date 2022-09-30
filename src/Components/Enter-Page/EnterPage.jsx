@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDoorClosed } from "@fortawesome/free-solid-svg-icons";
 import "./style.css";
 
+//when I click the button enter function calling and my music start. Also I call handlePageOpening function. It is on App.jsx file.
+
 function EnterPage({ handlePageOpening }) {
   const [play, { stop }] = useSound(
     "src/assets/star-wars-intro/Star Wars Intro.mp3"

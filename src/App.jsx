@@ -12,6 +12,7 @@ function App() {
   const [showOpeningPage, setShowOpeningPage] = useState(false);
   const [showEnterPage, setShowEnterPage] = useState(true);
 
+  //with this code I create my stars when window size changing
   useEffect(() => {
     window.addEventListener("resize", () => {
       createStar();
@@ -23,6 +24,7 @@ function App() {
     };
   }, []);
 
+  //with this code I show my componenets with an order
   useEffect(() => {
     if (showOpeningPage) {
       setTimeout(() => {

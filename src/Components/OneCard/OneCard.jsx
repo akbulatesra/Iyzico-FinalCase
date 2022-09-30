@@ -3,7 +3,9 @@ import "./style.css";
 import { NavLink } from "react-router-dom";
 
 function OneCard({ name, model, hyperdrive_rating, url }) {
+  // I call my pictures with this src
   const src = `src/images/${name}.jpg`;
+  // I create id from url
   const x = url.split("/");
   const shipId = x[x.length - 2];
   return (

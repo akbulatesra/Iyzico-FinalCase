@@ -10,6 +10,7 @@ function getRandomPosition() {
   return [randomX, randomY];
 }
 
+// I create a starBody for adding my stars. Then I add it to original body. So if window's size change there is no problem. I call this function in here and in App.jsx file with useEffect
 const createStar = () => {
   let starBody;
   if (document.getElementById("starBody") === null) {

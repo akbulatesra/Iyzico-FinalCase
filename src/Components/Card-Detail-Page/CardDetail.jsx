@@ -20,8 +20,10 @@ function CardDetail({
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  // to determine the current location
   const { shipId } = useParams();
 
+  // If the user wants to go to starship by typing the url directly
   useEffect(() => {
     let ignore = false;
     if (!name) {
@@ -49,7 +51,10 @@ function CardDetail({
   if (loading) return <Loading />;
   if (error) return <Error />;
 
+  // If the user wants to go to starship by typing the url directly
   url = url ? url : data.url;
+
+  // I create id from url
   const splittedUrl = url?.split("/");
   const shipIdFromUrl = splittedUrl ? splittedUrl[splittedUrl.length - 2] : "";
   const src = `src/images/${name || data.name}.jpg`;

@@ -9,6 +9,7 @@ function OpeningPage({ openingPage }) {
   const [showCompaniesText, setShowCompaniesText] = useState(false);
   const [showInformationText, setInformationText] = useState(false);
 
+  //with this code I show my componenets with an order
   useEffect(() => {
     if (openingPage) {
       setTimeout(() => {

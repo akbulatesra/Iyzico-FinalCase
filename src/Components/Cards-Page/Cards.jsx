@@ -4,12 +4,13 @@ import "./style.css";
 import OneCard from "../OneCard/OneCard";
 import Search from "./Search";
 import Loading from "../Loading-Page/Loading.jsx";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import CardDetail from "../Card-Detail-Page/CardDetail";
 
 function Cards() {
   const [urls, setUrls] = useState(["https://swapi.dev/api/starships/"]);
   const [datas, setDatas] = useState([]);
+  // we have different pages for datas so I add them on a array and call them with currentUrl
   const [currentUrl, setCurrentUrl] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
@@ -17,12 +18,15 @@ function Cards() {
     useState(false);
   const [lastIndex, setLastIndex] = useState(0);
 
+  // I call my datas with axios
   const awaitDatas = async () => {
     setLoading(true);
     try {
       const response = await axios.get(urls[currentUrl]);
       const temp = [...datas, ...response.data.results];
       if (response.data.next === null) setIsDisabledLoadMoreButton(true);
+
+      //if there is more data I upload urls and datas
       response.data.next &&
         setUrls((prev) => [...new Set([...prev, response.data.next])]);
       setDatas(temp);
@@ -33,6 +37,7 @@ function Cards() {
     }
   };
 
+  //I use this code for scrolling
   useEffect(() => {
     if (!loading) {
       lastIndex &&
@@ -42,6 +47,7 @@ function Cards() {
     }
   }, [loading]);
 
+  //when currentUrl change I call the awaitDatas function
   useEffect(() => {
     awaitDatas();
   }, [currentUrl]);
@@ -52,6 +58,8 @@ function Cards() {
       setCurrentUrl(currentUrl + 1);
     }
   };
+
+  // Filtered datas array
   const filteredData = searchQuery.length
     ? datas.filter(
         (data) =>

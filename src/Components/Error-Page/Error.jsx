@@ -2,6 +2,8 @@ import React from "react";
 import "./style.css";
 import { NavLink } from "react-router-dom";
 
+//I used NavLink to go back home page
+
 function Error() {
   return (
     <div className="error-container">
